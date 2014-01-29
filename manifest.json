@@ -1,0 +1,38 @@
+{
+  "manifest_version":2,
+  "name": "LazyClick",
+  "version": "1.0",
+
+
+  "description": "The Power of KeyBoard Shortcuts in Your Mouse!",
+  "icons": { 
+    "16" : "images/icon.png",
+    "48" : "images/48.png",
+    "128" : "images/128.png"
+  },
+  "background": {
+    "page": "background.html"
+  },
+  "options_page":"options.html",
+  "permissions": ["tabs", "storage", "contextMenus"
+
+  ],
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_title": "LazyClick",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts":[
+    {
+      "matches":[
+        "<all_urls>"
+      ],
+      "all_frames":true,
+      "js":[
+        "js/jquery-1.9.1.js", "js/jquery-ui-1.10.3.custom.min.js", "js/content_script.js" 
+      ]
+    }
+  ],
+  "web_accessible_resources":["background.html", "js/script.js"]
+}
